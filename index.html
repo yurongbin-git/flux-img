@@ -1,8 +1,141 @@
-<html>​
- <title>这是一个测试页面</title>​
- <body>​
-    <h1>​
-      这是一个测试页面​
-    </h1>​
- </body>​
-</html>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI图像生成器</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <i class="fas fa-robot"></i>
+                AI创想室
+            </a>
+            <div class="nav-links">
+                <a href="#" class="active">图像生成</a>
+                <a href="#">我的作品</a>
+                <a href="#">使用教程</a>
+                <a href="#">关于</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="prompt-section">
+            <div class="prompt-container">
+                <h2>创作提示词</h2>
+                <textarea 
+                    placeholder="请输入详细的图像描述，例如：一只戴着太空头盔的猫咪，在星空中漂浮，8k超清，科幻风格..."
+                    rows="4"
+                ></textarea>
+                <div class="prompt-actions">
+                    <button class="generate-btn">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                        开始生成
+                    </button>
+                    <button class="clear-btn">
+                        <i class="fas fa-eraser"></i>
+                        清空
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="generating-section">
+            <h2>正在生成</h2>
+            <div class="generating-container">
+                <div class="generating-card">
+                    <div class="loading-animation"></div>
+                    <p>正在创作中...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2>已生成作品</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/400/400" alt="AI生成图片">
+                    <div class="gallery-item-overlay">
+                        <p class="prompt-text">太空猫咪探险记</p>
+                        <div class="item-actions">
+                            <button><i class="fas fa-download"></i></button>
+                            <button><i class="fas fa-share-alt"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 更多图片项 -->
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/401/400" alt="AI生成图片">
+                    <div class="gallery-item-overlay">
+                        <p class="prompt-text">未来城市夜景</p>
+                        <div class="item-actions">
+                            <button><i class="fas fa-download"></i></button>
+                            <button><i class="fas fa-share-alt"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>常见问题</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">如何使用这个工具？</h3>
+                <p class="faq-answer">您只需在提示词输入框中输入描述，然后点击“开始生成”按钮即可。</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">生成的图片可以下载吗？</h3>
+                <p class="faq-answer">是的，您可以通过点击每张图片下方的下载按钮来保存生成的图片。</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">生成图片的时间大约是多少？</h3>
+                <p class="faq-answer">生成时间取决于描述的复杂性，通常在几秒到几分钟之间。</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">我可以使用生成的图片吗？</h3>
+                <p class="faq-answer">是的，您可以自由使用生成的图片，但请遵循相关的版权和使用条款。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AI创想室</h3>
+                <p>让创意触手可及</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系我们</h3>
+                <p>邮箱：contact@aistudio.com</p>
+                <p>微信：AI_Studio</p>
+            </div>
+            <div class="footer-section">
+                <h3>关注我们</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-weixin"></i></a>
+                    <a href="#"><i class="fab fa-weibo"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AI创想室. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html> 
